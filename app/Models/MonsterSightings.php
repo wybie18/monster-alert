@@ -14,7 +14,8 @@ class MonsterSightings extends Model
         'description',
         'latitude',
         'longitude',
-        'sighted_at'
+        'approved_at',
+        'approved_by'
     ];
 
     public function user(){
