@@ -1,7 +1,7 @@
 <nav x-data="{ open: false }" class="hidden md:flex md:flex-col md:w-64 md:fixed md:inset-y-0 bg-white border-r border-gray-100">
     <!-- Logo -->
     <div class="flex items-center h-16 px-6 border-b border-gray-100">
-        <a href="{{ route('admin.dashboard') }}" class="flex items-center">
+        <a href="{{ route('user.dashboard') }}" class="flex items-center">
             <x-application-logo class="h-8 w-auto fill-current text-indigo-600" />
             <span class="ml-2 text-lg font-medium text-gray-900">{{ config('app.name', 'Laravel') }}</span>
         </a>
@@ -10,23 +10,23 @@
     <!-- Navigation Links -->
     <div class="flex-1 flex flex-col overflow-y-auto pt-5 pb-4">
         <nav class="flex-1 px-4 space-y-1">
-            <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50' }} group flex items-center px-3 py-2 text-sm font-medium rounded-md">
-                <svg xmlns="http://www.w3.org/2000/svg" class="{{ request()->routeIs('admin.dashboard') ? 'text-indigo-500' : 'text-gray-400 group-hover:text-gray-500' }} mr-3 flex-shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href="{{ route('user.dashboard') }}" class="{{ request()->routeIs('user.dashboard') ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50' }} group flex items-center px-3 py-2 text-sm font-medium rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="{{ request()->routeIs('user.dashboard') ? 'text-indigo-500' : 'text-gray-400 group-hover:text-gray-500' }} mr-3 flex-shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 Dashboard
             </a>
-            <a href="{{ route('monsters.index') }}" class="{{ request()->routeIs('monsters.index') ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50' }} group flex items-center px-3 py-2 text-sm font-medium rounded-md">
-                <svg xmlns="http://www.w3.org/2000/svg" class="{{ request()->routeIs('monsters.index') ? 'text-indigo-500' : 'text-gray-400 group-hover:text-gray-500' }} mr-3 flex-shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href="{{ route('user.map') }}" class="{{ request()->routeIs('user.map') ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50' }} group flex items-center px-3 py-2 text-sm font-medium rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="{{ request()->routeIs('user.map') ? 'text-indigo-500' : 'text-gray-400 group-hover:text-gray-500' }} mr-3 flex-shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
-                Monster Records
+                Map
             </a>
-            <a href="{{ route('submissions.index') }}" class="{{ request()->routeIs('submissions.index') ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50' }} group flex items-center px-3 py-2 text-sm font-medium rounded-md">
-                <svg xmlns="http://www.w3.org/2000/svg" class="{{ request()->routeIs('submissions.index') ? 'text-indigo-500' : 'text-gray-400 group-hover:text-gray-500' }} mr-3 flex-shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <a href="{{ route('user.report') }}" class="{{ request()->routeIs('user.report') ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-50' }} group flex items-center px-3 py-2 text-sm font-medium rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="{{ request()->routeIs('user.report') ? 'text-indigo-500' : 'text-gray-400 group-hover:text-gray-500' }} mr-3 flex-shrink-0 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
-                User Submission
+                Report
             </a>
             
             <!-- Add more navigation links here as needed -->
