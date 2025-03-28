@@ -20,16 +20,20 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function() {
     Route::get('/admin/submissions', [SubmissionController::class, 'index'])->name('submissions.index');
     Route::put('/admin/submissions/{id}', [SubmissionController::class, 'approve'])->name('submissions.approve');
     Route::delete('/admin/submissions/{id}', [SubmissionController::class, 'destroy'])->name('submissions.destroy');
+
+    Route::get('/admin/profile', [ProfileController::class, 'admin'])->name('profile.edit');
 });
 
 Route::middleware(['auth', 'verified', 'role:user'])->group(function() {
     Route::get('/dashboard', [UserDashboardController::class, 'index'])->name('user.dashboard');
     Route::get('/report', [ReportController::class, 'index'])->name('user.report');
+    Route::post('/report', [ReportController::class, 'store'])->name('user.report.store');
     Route::get('/map', [MapController::class, 'index'])->name('user.map');
+
+    Route::get('/profile', [ProfileController::class, 'user'])->name('user.profile.edit');
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });

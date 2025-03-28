@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MapController extends Controller
 {
     public function index(){
-        $monsters = MonsterSightings::all();
+        $monsters = MonsterSightings::with('user')->get();
         return view('user.map', compact('monsters'));
     }
 }
